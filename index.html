@@ -299,7 +299,10 @@
                         </svg>
                         <span class="gradient-text font-bold">LibreTV</span>
                     </div>
-                    <p class="text-gray-500 text-sm mt-2 text-center md:text-left">© 2025 LibreTV - 自由观影，畅享精彩</p>
+                    <p <span class="text-gray-500 text-sm mt-2 text-center md:text-left">© 2025 LibreTV - 自由观影，畅享精彩！</span>
+                        今日访问人数:<span id="visitCount" class="ml-1 text-[#00ccff]">加载中...</span>
+                        当前在线人数:<span id="liveuser" class="ml-1 text-[#00ccff]">加载中...</span>
+                    </p>
                 </div>
                 
                 <div class="text-center md:text-right">
@@ -441,5 +444,15 @@
 
     <!-- 添加弹窗和URL搜索参数处理脚本 -->
     <script src="js/index-page.js"></script>
+
+       <!-- 访问统计脚本 -->
+    <script>
+        fetch('https://tongji.090227.xyz/?id=tv.sixsix66.dpdns.org')
+            .then(r => r.json())
+            .then(d => document.getElementById('visitCount').innerText = d.visitCount)
+            .catch(e => document.getElementById('visitCount').innerText = '加载失败');
+    </script>
+    <script src="https://liveuser.030101.xyz/main.js?sessionId=tv.sixsix66.dpdns.org"></script>
+ 
 </body>
 </html>
